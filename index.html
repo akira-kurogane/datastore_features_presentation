@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Datastore Features</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>Datastore features</h1>
+				</section>
+
+				<section>
+					<section>
+						<h1>Universal features</h1>
+					</section>
+					<section>
+						<pre>This page left intentionally blank</pre>
+					</section>
+				</section>
+
+				<section>
+					<h1>Optional features</h1>
+				</section>
+
+				<section>
+					<h1>Summary</h1>
+				</section>
+
+				<section>
+					<section>
+						<h1>Mutation explosion post 2006-ish</h1>
+						<p>'Every man and his dog' starting making new databases, most of them for a new model.</p>
+						<p>Literally 100's of datastores to choose from since ~2015. A few competing to be the same as others just bigger, better and faster; Most a unique shape of their own.</p>
+					</section>
+					<section>
+						<p>Many developers started understanding how databases were composed - write-ahead logs, b-trees, lock-free algorithms, memory vs disk representations, logical clocks, etc. - and took those ingredients and composed new datastores.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Reduce your requirements, find more options on the shelf</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Don't need disk persistence? Enjoy in-memory speed.</li>
+							<li>Dataset fits into one server? (Say 1TB RAM, 10TB disk) Distributed datastore not required.</li>
+							<li>Application-level data partitioning? Distributed datastore not required.</li>
+							<li>Don't need low response latency? HTTP API-using options OK.</li>
+							<li>Can re-initialize all data from external source? Datastores lacking backup method OK.</li>
+							<li>Don't need to share the data with other instances? Embedded storage engine or database becomes an option. Authentication unnecessary.</li>
+							<li>In a secure network? Can use datastores that lack TLS connection support.</li>
+							<li>Only need primary key, no secondary, compound, etc. indexes? Key-value db.</li>
+							<li>etc.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Many business requirements are strong restriction of options</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Need data-at-rest encryption? Very few datastores.</li>
+							<li>Federated Authentication? Most enterprise datastores, few non-enterprise datastores.</li>
+							<li>Rapid restore of TB-sized backups? Filesystem snapshot methods are probably required.</li>
+							<li>Point-in-time restore? Not many datastores.</li>
+						</ul>
+					</section>
+					<section>
+						<p>If it's in the DBA's hands they'll have to follow the rules above. All responsibility, no allowance for errors (except the sort billion-dollar vendors makes everyone suffer - you can't be fired for those.)</p>
+						<p>Only the application developer (or spokesperson for them eg. System architect) can absolve them from needing these. Eg. We'll do the encryption, use CSE; we'll split records into tables that are live and allow older ones to be frozen to reduce backup restore work.</p>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
