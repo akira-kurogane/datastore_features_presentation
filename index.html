@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Datastore Features</title>
+		<title>The Datastore Feature Spectrum</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -17,80 +17,324 @@
 		<div class="reveal">
 			<div class="slides">
 
-				<section>
-					<h1>Datastore features</h1>
+				<section >
+					<h1>The Datastore<br>
+						Feature Spectrum</h1>
 				</section>
 
 				<section>
-					<section>
-						<h1>Universal features</h1>
-					</section>
-					<section>
-						<pre>This page left intentionally blank</pre>
-					</section>
+					<h2>History</h2>
+					<h3 class="fragment">~2006</h3>
+					<p class="fragment">eCommerce has ramped up massively.<br>
+						SNS explodes too.<br>
+						<b>"Get big fast"</b> is the mantra.</p>
+				</section>
+
+				<section><!-- BigTable -->
+					<h2>BigTable paper released</h2>
+					<p>Just one paper following many others, but a turning point in popularity for that sort of reading amongst opensource devs.</p>
+					<p class="fragment">Proprietary enterprise DBMSes lose their special aura overnight.</p>
+				</section>
+
+				<section><!-- DIY generation begins -->
+					<p>Many developers gained comprehensive understanding how databases were composed</p>
+					<ul>
+						<li>write-ahead logs</li>
+						<li>query engines</li>
+						<li>lock-free algorithms</li>
+						<li>memory vs disk representation</li>
+					</ul>
 				</section>
 
 				<section>
-					<h1>Optional features</h1>
+					<p>(cont.)</p>
+					<ul>
+						<li>data partitioning</li>
+						<li>logical clocks</li>
+						<li>consistency guarantees</li>
+						<li>replication</li>
+						<li>etc.</li>
+					</ul>
 				</section>
 
 				<section>
-					<h1>Summary</h1>
+					<p>Literally hundreds of new datastores to choose from since then.</p>
+					<p>Some competing to replace a predecessor.</p>
+					<p>Most a unique shape of their own.</p>
 				</section>
 
 				<section>
-					<section>
-						<h1>Mutation explosion post 2006-ish</h1>
-						<p>'Every man and his dog' starting making new databases, most of them for a new model.</p>
-						<p>Literally 100's of datastores to choose from since ~2015. A few competing to be the same as others just bigger, better and faster; Most a unique shape of their own.</p>
-					</section>
-					<section>
-						<p>Many developers started understanding how databases were composed - write-ahead logs, b-trees, lock-free algorithms, memory vs disk representations, logical clocks, etc. - and took those ingredients and composed new datastores.</p>
-					</section>
+					<p>Database of Databases' (dbdb.io) count</p>
+					<ul>
+						<li>2000: 128 systems</li>
+						<li>2005: 178 systems</li>
+						<li>2010: 285 systems</li>
+						<li>2015: 440 systems</li>
+						<li>2020: 571 systems</li>
+						<li>2022: 614 systems</li>
+					</ul>
+					<p>(Databases only, not other datastores)</p>
+					<p>(Academic-only and EOL software not counted)</p>
+				</section>
+
+				<section><!-- Universal features -->
+					<h2>Universal features<br>
+						in Datastores</h2>
+				</section>
+				<section>
+					<p style="font-family: monospace;">"This page left intentionally blank"</p>
+				</section>
+
+				<section><!-- Optional features -->
+					<h2>Optional features<br>
+						in Datastores</h2>
+				</section>
+
+				<section data-auto-animate><!-- Secondary indexes-->
+					<h3>Secondary indexes</h3>
+					<p>Extra datastructures updated in sync with main table datastructure</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Secondary indexes</h3>
+					<div>Pros</div>
+					<ul>
+						<li>Fast locate records without supplying PK value<br>
+							(Full table scan needed otherwise!!!)</li>
+						<li>Sorted iteration by other keys</li>
+						<li>Skip random access to main table datastructure possible if query's fields covered by index's fields</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Secondary indexes</h3>
+					<div>Cons</div>
+					<ul>
+						<li>Writes must update multiple objects = increased write latency</li>
+						<li>Storage engine requires concurrency control</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Secondary indexes</h3>
+					<div>Present in ...</div>
+					<ul>
+						<li>Databases, any type - Relational, Document, Graph, etc.</li>
+						<li>Various enhanced products
+							<ul>
+								<li>Redis (Key-value store)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Secondary indexes</h3>
+					<div>Absent / N/A in </div>
+					<ul>
+						<li>Classic, spartan Key-value stores</li>
+						<li>Object stores</li>
+						<li>Event stores</li>
+					</ul>
+				</section>
+
+				<section><!-- Durability -->
+					<h3>Durability guarantee</h3>
+					<p>Disk writes done quickly</p>
+					<p>'Update complete' response to client app blocked until disk persistence confirmed</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Durability guarantee</h3>
+					<div>Pros</div>
+					<ul>
+						<li>Recovery after power-loss</li>
+						<li>Data recovered exactly the same a client apps write/read up until crash</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Durability guarantee</h3>
+					<div>Cons</div>
+					<ul>
+						<li>Disk sync latency >>> RAM latency</li>
+						<li>Double (or more) bytes written</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>XXXXXXX</h3>
+					<div>Present in ...</div>
+					<ul>
+						<li>xxxx</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>XXXXXXXXXX</h3>
+					<div>Absent / N/A in </div>
+					<ul>
+						<li>yyyy</li>
+					</ul>
 				</section>
 
 				<section>
-					<section>
-						<h1>Reduce your requirements, find more options on the shelf</h1>
-					</section>
-					<section>
+					<h3>XXXXXX</h3>
+					<p></p>
+				</section>
+				<section data-auto-animate>
+					<h3>XXXXXX</h3>
+					<div>Pros
 						<ul>
-							<li>Don't need disk persistence? Enjoy in-memory speed.</li>
-							<li>Dataset fits into one server? (Say 1TB RAM, 10TB disk) Distributed datastore not required.</li>
-							<li>Application-level data partitioning? Distributed datastore not required.</li>
-							<li>Don't need low response latency? HTTP API-using options OK.</li>
-							<li>Can re-initialize all data from external source? Datastores lacking backup method OK.</li>
-							<li>Don't need to share the data with other instances? Embedded storage engine or database becomes an option. Authentication unnecessary.</li>
-							<li>In a secure network? Can use datastores that lack TLS connection support.</li>
-							<li>Only need primary key, no secondary, compound, etc. indexes? Key-value db.</li>
-							<li>etc.</li>
+							<li>xxxxxx</li>
 						</ul>
-					</section>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>XXXXXX</h3>
+					<div>Cons
+						<ul>
+							<li>yyy</li>
+						</ul>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>XXXXXXX</h3>
+					<div>Present in ...</div>
+					<ul>
+						<li>xxxx</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>XXXXXXXXXX</h3>
+					<div>Absent / N/A in </div>
+					<ul>
+						<li>yyyy</li>
+					</ul>
+				</section>
+
+				<section><!-- Conclusion -->
+					<h2>Conclusion</h2>
+				</section>
+
+				<section><!-- Variety -->
+					<h3>Wide variety</h3>
+					<ul>
+						<li class="fragment">Application fit
+							<ul>
+								<li>API</li>
+								<li>Data model</li>
+								<li>Performance</li>
+							</ul>
+						</li>
+						<li class="fragment">Operations
+							<ul>
+								<li>Self-managed or SaaS</li>
+								<li>Cost per GB</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section><!-- Reduce reqs and profit -->
+					<h3>Reduce your requirements</h3>
+					<p>Find more options on the shelf</p>
+				</section>
+				<section>
+					<ul>
+						<li>Don't need disk persistence?<br>
+							<span class="fragment">Enjoy in-memory speed</span></li>
+						<li class="fragment">Dataset fits into one server?<br>
+							<span class="fragment">Distributed datastore not required</span></li>
+						<li class="fragment">Application-level data partitioning?<br>
+							<Distributed class="fragment">Distributed datastore not required</span></li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Don't need low response latency?<br>
+							<span class="fragment">Remote cloud OK</span><br>
+							<span class="fragment">HTTP API OK</span></li>
+						<li class="fragment">Can re-initialize all data from external source?<br>
+							<span class="fragment">Datastores lacking backup method OK</span></li>
+						<li class="fragment">Don't need to share the data beyond one app server?<br>
+							<span class="fragment">Embedded storage engine or database becomes an option (+ authentication unnecessary if so)</span></li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>In a secure network?<br>
+							<span class="fragment">No TLS connection support OK</span></li>
+						<li class="fragment">Only need primary key, no secondary, compound, etc. indexes?<br>
+							<span class="fragment">Key-value db</span><span></span></li>
+						<li class="fragment">etc.</li>
+					</ul>
+				</section>
+
+				<section><!-- Typical business reqs -->
+					<h3>Strongly-limiting business requirements</h3>
+					<aside class="notes">
+						High correlation with: Corporate customer checck-lists
+					</aside>
 				</section>
 
 				<section>
-					<section>
-						<h1>Many business requirements are strong restriction of options</h1>
-					</section>
-					<section>
-						<ul>
-							<li>Need data-at-rest encryption? Very few datastores.</li>
-							<li>Federated Authentication? Most enterprise datastores, few non-enterprise datastores.</li>
-							<li>Rapid restore of TB-sized backups? Filesystem snapshot methods are probably required.</li>
-							<li>Point-in-time restore? Not many datastores.</li>
-						</ul>
-					</section>
-					<section>
+					<ul>
+						<li>Need data-at-rest encryption?<br>
+							<span class="fragment">Very few datastores</span></li>
+						<li class="fragment">Federated Authentication?<br>
+							<span class="fragment">Most enterprise datastores; Few non-enterprise datastores</span></li>
+						<li class="fragment">Rapid restore of TB-sized backups?<br>
+							<span class="fragment">Filesystem snapshot methods are probably required</span></li>
+						<li class="fragment">Point-in-time restore?<br>
+							<span class="fragment">Not many datastores have documented, supported method</span></li>
+					</ul>
+				</section>
+
+				<!-- section>
+					<h3>Responsibilities</h3>
+					<p>Developers provide new features<br><span class="fragment">New features = profit</span></p>
+					<p>DBAs guarantee uptime, performance<br><span class="fragment">New risks = all blame on them</span></p>
+
+					<aside class="notes">
 						<p>If it's in the DBA's hands they'll have to follow the rules above. All responsibility, no allowance for errors (except the sort billion-dollar vendors makes everyone suffer - you can't be fired for those.)</p>
 						<p>Only the application developer (or spokesperson for them eg. System architect) can absolve them from needing these. Eg. We'll do the encryption, use CSE; we'll split records into tables that are live and allow older ones to be frozen to reduce backup restore work.</p>
-					</section>
+					</aside>
+				</section -->
+
+				<section>
+					<p><b>Business Continuity</b></p>
+					<ul>
+						<li class="fragment fade-in-then-semi-out">Maintenance != downtime <span  class="fragment">(now common)</span></li>
+						<li class="fragment fade-in-then-semi-out">Multi-datacenter failover <span  class="fragment">(now common)</span></li>
+						<li class="fragment">Automated backup restore</li>
+					</ul>
 				</section>
+
+				<section>
+					<p><b>Security Compliance, Data Governance</b></p>
+					<ul>
+						<li class="fragment">Security</li>
+						<ul>
+							<li class="fragment">KMS (Key management server) integration</li>
+							<li class="fragment fade-in-then-semi-out">Network encryption <span  class="fragment">(common)</span></li>
+							<li class="fragment">Storage encryption (minority req.)</li>
+						</ul>
+						<li class="fragment">Audit Log</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>Small % of datastores satisfy all those</p>
+					<ul>
+						<li>Up side: Search time saved</li>
+						<li>Down side: Probably ruled-out
+							<ul>
+								<li>Best-fit API and data model</li>
+								<li>Best performance, cost</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
 			// More info about initialization & config:
