@@ -126,7 +126,7 @@
 				</section>
 				<section data-auto-animate>
 					<h3>Secondary indexes</h3>
-					<div>Absent / N/A in </div>
+					<div>Absent / N/A in ...</div>
 					<ul>
 						<li>Classic, spartan Key-value stores</li>
 						<li>Object stores</li>
@@ -156,49 +156,84 @@
 					</ul>
 				</section>
 				<section data-auto-animate>
-					<h3>XXXXXXX</h3>
+					<h3>Durability guarantee</h3>
 					<div>Present in ...</div>
 					<ul>
-						<li>xxxx</li>
+						<li>Basically all disk-using datastores</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
-					<h3>XXXXXXXXXX</h3>
-					<div>Absent / N/A in </div>
+					<h3>Durability guarantee</h3>
+					<div>Absent / N/A in ...</div>
 					<ul>
-						<li>yyyy</li>
+						<li>In-memory datastores</li>
+						<li>Distributed datastores have edge cases</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>XXXXXX</h3>
-					<p></p>
+					<h3>Consistency</h3>
+					<p>Client apps protected against seeing partially-complete updates</p>
+					<aside class="notes">
+						Another way to explain consistency is partial writes may be made - field value in record struct updated at location A, matching index record updates with bytes at location B, etc. - they won't be acceptable for serving until all are complete. Usually by a min global transaction id is updated and they're all older than it, therefore OK.
+					</aside>
 				</section>
 				<section data-auto-animate>
-					<h3>XXXXXX</h3>
-					<div>Pros
+					<h3>Consistency</h3>
+					<div>Pros / Cons
 						<ul>
-							<li>xxxxxx</li>
+							<li>No risk of corrupted-looking reads</li>
+							<li>Latency higher
+								<ul>
+									<li>Generally just a tiny bit</li>
+									<li>Worse with distributed databases and multi-table transactions.</li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</section>
 				<section data-auto-animate>
-					<h3>XXXXXX</h3>
-					<div>Cons
-						<ul>
-							<li>yyy</li>
-						</ul>
-					</div>
-				</section>
-				<section data-auto-animate>
-					<h3>XXXXXXX</h3>
+					<h3>Consistency</h3>
 					<div>Present in ...</div>
 					<ul>
-						<li>xxxx</li>
+						<li>Mostly every datastore</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
-					<h3>XXXXXXXXXX</h3>
+					<h3>Consistency</h3>
+					<div>Absent / N/A in </div>
+					<ul>
+						<li>Block storage (fileystem)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Isolation</h3>
+					<p>How much clients are isolated from other client's concurrently-occuring updates</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Isolation</h3>
+					<div>Pros</div>
+					<ul>
+						<li>Ability to reason about / trust the datastore</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Isolation</h3>
+					<div>Cons</div>
+						<ul>
+							<li>It's a little hard to reason about (but still good)</li>
+						</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Isolation</h3>
+					<div>Present in ...</div>
+					<ul>
+						<li>xxxx TODO</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Isolation</h3>
 					<div>Absent / N/A in </div>
 					<ul>
 						<li>yyyy</li>
