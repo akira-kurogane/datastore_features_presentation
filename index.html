@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/dracula.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -37,15 +37,14 @@
 				</section>
 
 				<section><!-- DIY generation begins -->
-					<p>Many developers gained comprehensive understanding how databases were composed</p>
+					<p>Many developers gained comprehensive understanding on how databases are composed</p>
 					<ul>
 						<li>write-ahead logs</li>
 						<li>query engines</li>
 						<li>lock-free algorithms</li>
-						<li>memory vs disk representation</li>
+						<li>memory vs disk format</li>
 					</ul>
 				</section>
-
 				<section>
 					<p>(cont.)</p>
 					<ul>
@@ -171,26 +170,34 @@
 					</ul>
 				</section>
 
-				<section><!-- Consistency -->
+				<section><!-- (Single server) consistency -->
 					<h3>Consistency</h3>
-					<p>Client apps protected against seeing partially-complete updates</p>
+					<p>Client apps protected against reading incomplete updates</p>
+					<p>Eg. Table record updated but matching index update delayed, next read via index does not match record.</p>
 					<aside class="notes">
-						Another way to explain consistency is partial writes may be made - field value in record struct updated at location A, matching index record updates with bytes at location B, etc. - they won't be acceptable for serving until all are complete. Usually by a min global transaction id is updated and they're all older than it, therefore OK.
+						Another way to explain consistency is partial writes may be made - 
+						field value in record struct updated at location A, matching index record updates with bytes at location B, etc. - 
+						they won't be acceptable for serving until all are complete. 
+						Usually by a min global transaction id is updated and they're all older than it, therefore OK.
 					</aside>
 				</section>
 				<section data-auto-animate>
 					<h3>Consistency</h3>
-					<div>Pros / Cons
-						<ul>
-							<li>No risk of corrupted-looking reads</li>
-							<li>Latency higher
-								<ul>
-									<li>Generally just a tiny bit</li>
-									<li>Worse with distributed databases and multi-table transactions.</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
+					<div>Pros</div>
+					<ul>
+						<li>No risk of corrupt-looking reads</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Consistency</h3>
+					<div>Cons</div>
+					<ul>
+						<li>Latency higher
+							<ul>
+								<li>Generally just a tiny bit</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 				<section data-auto-animate>
 					<h3>Consistency</h3>
@@ -206,6 +213,57 @@
 						<li>Block storage (fileystem)</li>
 					</ul>
 				</section>
+
+				<section><!-- Distributed system consistency -->
+					<h3>Distributed system consistency</h3>
+					<p>Distributed systems have many issues related to time order.</p>
+					<p>This "consistency" means client apps won't see updates from other clients in a mixed-up order.</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Distributed system consistency</h3>
+					<div>Pros</div>
+					<ul>
+						<li>'Stronger' consistency models: easier to reason about</li>
+						<li>'Weaker' consistency models: low latency penalty</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Distributed system consistency</h3>
+					<div>Cons</div>
+					<ul>
+						<li>'Stronger' consistency models: Higher latency. Write performance low</li>
+						<li>'Weaker' consistency models: Data with a mixed-up order of client updates might be served</li>
+					</ul>
+				</section>
+				<!-- section>
+					<h3>Consistency</h3>
+					<h4>Distributed datastores</h4>
+					<p>Replication of writes to secondaries / mirrors are usually asynchronous.<br>
+						<span class="fragment">=<br>Reads from secondaries are not naturally consistent.</span></p>
+					</sectuib>
+				<section>
+					<h3>Consistency</h3>
+					<h4>Distributed datastores</h4>
+					<p>Alternate consistency guarantees offered instead. Eg.</p>
+					<ul>
+						<li>"Read your own writes"</li>
+						<li>'Eventual consistency'</li>
+					</ul>
+					<aside class="notes">
+						Mitigating workarounds like 'wait for replication' write options, automatic wait 
+						when doing reads until distributed timestamp matches some expectation
+					</aside>
+				</section>
+				<section>
+					<h3>Consistency</h3>
+					<h4>Distributed datastores</h4>
+					<p>Reads from the primary / leader are fine.</p>
+					<p>That is common default, so no problem unless:</p>
+					<ul>
+						<li>State-unaware proxies are used between client and datastore</li>
+						<li>User deliberately chooses secondary reads </li>
+					</ul>
+				</section -->
 
 				<section><!-- Isolation -->
 					<h3>Isolation</h3>
@@ -310,7 +368,7 @@
 					<div>Pros</div>
 					<ul>
 						<li>Universal constraints guaranteed</li>
-						<li>Variety in client apps no risk to that</li>
+						<li>Client apps cannot accidentally ruin it</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
@@ -335,14 +393,13 @@
 						<li>Object stores</li>
 						<li>Most key-value stores</li>
 						<li>Block, files</li>
-						<li>(Distributed databases - Referential constraints)</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
 					<h3>Enforced Schema</h3>
 					<div>Important edge case:</div>
 					<ul>
-						<li>Referential constraints in distributed databases</li>
+						<li>Referential constraints unsupported in most distributed databases</li>
 					</ul>
 				</section>
 
@@ -350,7 +407,7 @@
 					<h3>The Auths / RBAC</h3>
 					<p>Authentication and Authorization, a.k.a. Role-based Accesss Control</p>
 					<p>'Who', and what they are permitted to do</p>
-					<p>Usually table/file level. Occasionally record-level.</p>
+					<p>Usually table/file level. Rarely record-level.</p>
 				</section>
 				<section data-auto-animate>
 					<h3>The Auths / RBAC</h3>
@@ -429,6 +486,8 @@
 					</aside>
 				</section>
 
+				<!-- TODO OLAP-performannt data models? -->
+
 				<section><!-- Distributed Data -->
 					<h3>Distributed Data</h3>
 					<p>Data is partitioned by some key(s) and hosted on multiple servers.</p>
@@ -469,14 +528,16 @@
 
 				<section><!-- Continuous uptime -->
 					<h3>Replication & Continuous uptime</h3>
-					<p>Old days: downtime for maintenance / crashes</p>
-					<p>Replicated servers:
-						<ul>
-							<li>Only one shutdown at a time for maintenance</li>
-							<li>Clients switch to other automatically; 100% uptime.</li>
-							<li>Hot failover</li>
-						</ul>
-					</p>
+					<p>Old days:</p>
+					<ul>
+						<li>Downtime for maintenance / crashes</li>
+					</ul>
+					<p>Replicated servers:</p>
+					<ul>
+						<li>Only one shutdown at a time for maintenance</li>
+						<li>Clients switch to other automatically; 100% uptime.</li>
+						<li>Hot failover</li>
+					</ul>				
 				</section>
 				<section data-auto-animate>
 					<h3>Replication & Continuous uptime</h3>
@@ -491,7 +552,7 @@
 					<ul>
 						<li>Client drivers must be replication-aware for seamless failover</li>
 						<li>Switchover might have a latency hiccup</li>
-						<li>Consistency violation edge cases during switchover</li>
+						<li>Edge cases during switchover can break distributed consistency</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
@@ -527,6 +588,7 @@
 					<h3>Point-in-time Restore</h3>
 					<div>Cons</div>
 					<ul>
+						<li>Have to keep backup of op log too</li>
 						<li>Practical, fail-safe procedures usually not part of support, nor documented well</li>
 						<li>Hard to create a script today that will be easy to use on some random, production-emergency day in the future</li>
 					</ul>
@@ -565,8 +627,14 @@
 					<h3>Streaming</h3>
 					<div>Present in ...</div>
 					<ul>
-						<li>Event stores</li>
 						<li>Some databases, key-value stores</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Streaming</h3>
+					<div>N/A:</div>
+					<ul>
+						<li>Event stores</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
@@ -581,7 +649,7 @@
 
 				<section><!-- Encryption at Rest -->
 					<h3>Encryption at Rest</h3>
-					<p>When data files of the datastore are encrypted,<br>
+					<p>Underlying data files are encrypted,<br>
 						unusable without private key.</p>
 				</section>
 				<section data-auto-animate>
@@ -597,7 +665,7 @@
 					<div>Cons</div>
 					<ul>
 						<li>Need to use an external KMS</li>
-						<li>Backup restore complicated</li>
+						<li>Backup restore has extra complication</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
@@ -631,8 +699,8 @@
 					<div>Cons</div>
 					<ul>
 						<li>Appplication can experience high latency volatility</li>
-						<li>The copy to cheaper tiers is slow, temporarily network-flooding operation</li>
-						<li>Writes to 'cold' segments much slower. This includes record-level deletes.</li>
+						<li>Migrating 'cold' data to cheaper tiers takes time, network bandwidth</li>
+						<li>Writes (including deletes) to 'cold' segments much slower.</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
@@ -683,7 +751,7 @@
 					<h3>Bare-metal speed (disk)</h3>
 					<div>Present in ...</div>
 					<ul>
-						<li>Block / filesystem<br><span class="fragment">... and only if mounted directly on same PCIe bus</span></li>
+						<li>Block / filesystem<br><span class="fragment">... only if disk mounted directly on same server</span></li>
 					</ul>
 				</section>
 				<section data-auto-animate>
