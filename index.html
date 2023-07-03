@@ -1,247 +1,271 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>The Datastore Feature Spectrum</title>
+    <title>The Datastore Feature Spectrum</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/dracula.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/m23.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+    <!-- Theme used for syntax highlighted code -->
+    <!-- link rel="stylesheet" href="plugin/highlight/monokai.css" -->
+    <link rel="stylesheet" href="plugin/highlight/vs2015.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-state="title-2">
+          <h3>Data State & Storage</h3>
+          <h1>
+            The Datastore<br />
+            Feature Spectrum
+          </h1>
+        </section>
 
-				<section >
-					<h1>The Datastore<br>
-						Feature Spectrum</h1>
-				</section>
+        <section data-state="content-1">
+          <h2>History</h2>
+          <h3 class="fragment">~2006</h3>
+          <p class="fragment">
+            eCommerce has ramped up massively.<br />
+            SNS explodes too.<br />
+            <b>"Get big fast"</b> is the mantra.
+          </p>
+        </section>
 
-				<section>
-					<h2>History</h2>
-					<h3 class="fragment">~2006</h3>
-					<p class="fragment">eCommerce has ramped up massively.<br>
-						SNS explodes too.<br>
-						<b>"Get big fast"</b> is the mantra.</p>
-				</section>
+        <section data-state="content-1">
+          <!-- BigTable -->
+          <h2>BigTable paper released</h2>
+          <p>
+            Just one paper following many others, but a turning point in popularity for that sort of reading amongst
+            opensource devs.
+          </p>
+          <p class="fragment">Proprietary enterprise DBMSes lose their special aura overnight.</p>
+        </section>
 
-				<section><!-- BigTable -->
-					<h2>BigTable paper released</h2>
-					<p>Just one paper following many others, but a turning point in popularity for that sort of reading amongst opensource devs.</p>
-					<p class="fragment">Proprietary enterprise DBMSes lose their special aura overnight.</p>
-				</section>
+        <section data-state="content-1">
+          <!-- DIY generation begins -->
+          <p>Many developers gained comprehensive understanding on how databases are composed</p>
+          <ul>
+            <li>write-ahead logs</li>
+            <li>query engines</li>
+            <li>lock-free algorithms</li>
+            <li>memory vs disk format</li>
+          </ul>
+        </section>
+        <section data-state="content-1">
+          <p>(cont.)</p>
+          <ul>
+            <li>data partitioning</li>
+            <li>logical clocks</li>
+            <li>consistency guarantees</li>
+            <li>replication</li>
+            <li>etc.</li>
+          </ul>
+        </section>
 
-				<section><!-- DIY generation begins -->
-					<p>Many developers gained comprehensive understanding on how databases are composed</p>
-					<ul>
-						<li>write-ahead logs</li>
-						<li>query engines</li>
-						<li>lock-free algorithms</li>
-						<li>memory vs disk format</li>
-					</ul>
-				</section>
-				<section>
-					<p>(cont.)</p>
-					<ul>
-						<li>data partitioning</li>
-						<li>logical clocks</li>
-						<li>consistency guarantees</li>
-						<li>replication</li>
-						<li>etc.</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <p>Literally hundreds of new datastores to choose from since then.</p>
+          <p>Some competing to replace a predecessor.</p>
+          <p>Most a unique shape of their own.</p>
+        </section>
 
-				<section>
-					<p>Literally hundreds of new datastores to choose from since then.</p>
-					<p>Some competing to replace a predecessor.</p>
-					<p>Most a unique shape of their own.</p>
-				</section>
+        <section data-state="content-1">
+          <p>Database of Databases' (dbdb.io) count</p>
+          <ul>
+            <li>2000: 128 systems</li>
+            <li>2005: 178 systems</li>
+            <li>2010: 285 systems</li>
+            <li>2015: 440 systems</li>
+            <li>2020: 571 systems</li>
+            <li>2022: 614 systems</li>
+          </ul>
+          <p>(Databases only, not other datastores)</p>
+          <p>(Academic-only and EOL software not counted)</p>
+        </section>
 
-				<section>
-					<p>Database of Databases' (dbdb.io) count</p>
-					<ul>
-						<li>2000: 128 systems</li>
-						<li>2005: 178 systems</li>
-						<li>2010: 285 systems</li>
-						<li>2015: 440 systems</li>
-						<li>2020: 571 systems</li>
-						<li>2022: 614 systems</li>
-					</ul>
-					<p>(Databases only, not other datastores)</p>
-					<p>(Academic-only and EOL software not counted)</p>
-				</section>
+        <section data-state="content-1">
+          <!-- Universal features -->
+          <h2>
+            Universal features<br />
+            in Datastores
+          </h2>
+        </section>
+        <section data-state="content-1">
+          <p style="font-family: monospace">"This page left intentionally blank"</p>
+        </section>
 
-				<section><!-- Universal features -->
-					<h2>Universal features<br>
-						in Datastores</h2>
-				</section>
-				<section>
-					<p style="font-family: monospace;">"This page left intentionally blank"</p>
-				</section>
+        <section>
+          <!-- Optional features -->
+          <h2>
+            Optional features<br />
+            in Datastores
+          </h2>
+        </section>
 
-				<section><!-- Optional features -->
-					<h2>Optional features<br>
-						in Datastores</h2>
-				</section>
+        <section data-state="content-1" data-auto-animate>
+          <!-- Secondary indexes-->
+          <h3>Secondary indexes</h3>
+          <p>Extra datastructures updated in sync with main table datastructure</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Secondary indexes</h3>
+          <div>Pros</div>
+          <ul>
+            <li>
+              Fast locate records without supplying PK value<br />
+              (Full table scan needed otherwise!!!)
+            </li>
+            <li>Sorted iteration by other keys</li>
+            <li>Skip random access to main table datastructure possible if query's fields covered by index's fields</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Secondary indexes</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Writes must update multiple datastructures = increased write latency</li>
+            <li>Storage engine requires concurrency control</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Secondary indexes</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Databases, any type - Relational, Document, Graph, etc.</li>
+            <li>
+              Various enhanced products
+              <ul>
+                <li>Redis (Key-value store)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Secondary indexes</h3>
+          <div>Absent / N/A in ...</div>
+          <ul>
+            <li>Classic, spartan Key-value stores</li>
+            <li>Object stores</li>
+            <li>Event stores</li>
+          </ul>
+        </section>
 
-				<section data-auto-animate><!-- Secondary indexes-->
-					<h3>Secondary indexes</h3>
-					<p>Extra datastructures updated in sync with main table datastructure</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Secondary indexes</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Fast locate records without supplying PK value<br>
-							(Full table scan needed otherwise!!!)</li>
-						<li>Sorted iteration by other keys</li>
-						<li>Skip random access to main table datastructure possible if query's fields covered by index's fields</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Secondary indexes</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Writes must update multiple objects = increased write latency</li>
-						<li>Storage engine requires concurrency control</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Secondary indexes</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Databases, any type - Relational, Document, Graph, etc.</li>
-						<li>Various enhanced products
-							<ul>
-								<li>Redis (Key-value store)</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Secondary indexes</h3>
-					<div>Absent / N/A in ...</div>
-					<ul>
-						<li>Classic, spartan Key-value stores</li>
-						<li>Object stores</li>
-						<li>Event stores</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Durability -->
+          <h3>Durability guarantee</h3>
+          <p>Disk writes done quickly</p>
+          <p>'Update complete' response to client app blocked until disk persistence confirmed</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Durability guarantee</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Recovery after power-loss</li>
+            <li>Data recovered exactly the same a client apps write/read up until crash</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Durability guarantee</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Disk sync latency >>> RAM latency</li>
+            <li>Double (or more) bytes written</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Durability guarantee</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Basically all disk-using datastores</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Durability guarantee</h3>
+          <div>Absent / N/A in ...</div>
+          <ul>
+            <li>In-memory datastores</li>
+            <li>Distributed datastores have edge cases</li>
+          </ul>
+        </section>
 
-				<section><!-- Durability -->
-					<h3>Durability guarantee</h3>
-					<p>Disk writes done quickly</p>
-					<p>'Update complete' response to client app blocked until disk persistence confirmed</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Durability guarantee</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Recovery after power-loss</li>
-						<li>Data recovered exactly the same a client apps write/read up until crash</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Durability guarantee</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Disk sync latency >>> RAM latency</li>
-						<li>Double (or more) bytes written</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Durability guarantee</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Basically all disk-using datastores</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Durability guarantee</h3>
-					<div>Absent / N/A in ...</div>
-					<ul>
-						<li>In-memory datastores</li>
-						<li>Distributed datastores have edge cases</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- (Single server) consistency -->
+          <h3>Consistency</h3>
+          <p>Client apps protected against reading incomplete updates</p>
+          <p>Eg. Table record updated but matching index update delayed, next read via index does not match record.</p>
+          <aside class="notes">
+            Another way to explain consistency is partial writes may be made - field value in record struct updated at
+            location A, matching index record updates with bytes at location B, etc. - they won't be acceptable for
+            serving until all are complete. Usually by a min global transaction id is updated and they're all older than
+            it, therefore OK.
+          </aside>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Consistency</h3>
+          <div>Pros</div>
+          <ul>
+            <li>No risk of corrupt-looking reads</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Consistency</h3>
+          <div>Cons</div>
+          <ul>
+            <li>
+              Latency higher
+              <ul>
+                <li>Generally just a tiny bit</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Consistency</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Mostly every datastore</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Consistency</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Block storage (fileystem)</li>
+          </ul>
+        </section>
 
-				<section><!-- (Single server) consistency -->
-					<h3>Consistency</h3>
-					<p>Client apps protected against reading incomplete updates</p>
-					<p>Eg. Table record updated but matching index update delayed, next read via index does not match record.</p>
-					<aside class="notes">
-						Another way to explain consistency is partial writes may be made - 
-						field value in record struct updated at location A, matching index record updates with bytes at location B, etc. - 
-						they won't be acceptable for serving until all are complete. 
-						Usually by a min global transaction id is updated and they're all older than it, therefore OK.
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h3>Consistency</h3>
-					<div>Pros</div>
-					<ul>
-						<li>No risk of corrupt-looking reads</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Consistency</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Latency higher
-							<ul>
-								<li>Generally just a tiny bit</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Consistency</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Mostly every datastore</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Consistency</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Block storage (fileystem)</li>
-					</ul>
-				</section>
-
-				<section><!-- Distributed system consistency -->
-					<h3>Distributed system consistency</h3>
-					<p>Distributed systems have many issues related to time order.</p>
-					<p>This "consistency" means client apps won't see updates from other clients in a mixed-up order.</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Distributed system consistency</h3>
-					<div>Pros</div>
-					<ul>
-						<li>'Stronger' consistency models: easier to reason about</li>
-						<li>'Weaker' consistency models: low latency penalty</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Distributed system consistency</h3>
-					<div>Cons</div>
-					<ul>
-						<li>'Stronger' consistency models: Higher latency. Write performance low</li>
-						<li>'Weaker' consistency models: Data with a mixed-up order of client updates might be served</li>
-					</ul>
-				</section>
-				<!-- section>
+        <section data-state="content-1">
+          <!-- Distributed system consistency -->
+          <h3>Distributed system consistency</h3>
+          <p>Distributed systems have many issues related to time order.</p>
+          <p>This "consistency" means client apps won't see updates from other clients in a mixed-up order.</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Distributed system consistency</h3>
+          <div>Pros</div>
+          <ul>
+            <li>'Stronger' consistency models: easier to reason about</li>
+            <li>'Weaker' consistency models: low latency penalty</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Distributed system consistency</h3>
+          <div>Cons</div>
+          <ul>
+            <li>'Stronger' consistency models: Higher latency. Write performance low</li>
+            <li>'Weaker' consistency models: Data with a mixed-up order of client updates might be served</li>
+          </ul>
+        </section>
+        <!-- section>
 					<h3>Consistency</h3>
 					<h4>Distributed datastores</h4>
 					<p>Replication of writes to secondaries / mirrors are usually asynchronous.<br>
 						<span class="fragment">=<br>Reads from secondaries are not naturally consistent.</span></p>
 					</sectuib>
-				<section>
+				<section data-state="content-1">
 					<h3>Consistency</h3>
 					<h4>Distributed datastores</h4>
 					<p>Alternate consistency guarantees offered instead. Eg.</p>
@@ -254,7 +278,7 @@
 						when doing reads until distributed timestamp matches some expectation
 					</aside>
 				</section>
-				<section>
+				<section data-state="content-1">
 					<h3>Consistency</h3>
 					<h4>Distributed datastores</h4>
 					<p>Reads from the primary / leader are fine.</p>
@@ -265,551 +289,576 @@
 					</ul>
 				</section -->
 
-				<section><!-- Isolation -->
-					<h3>Isolation</h3>
-					<p>How much clients are isolated from other client's concurrently-occuring updates</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Isolation</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Ability to reason about / trust the datastore</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Isolation</h3>
-					<div>Cons</div>
-					<ul>
-						<li>It's a little hard to reason about</li>
-						<li>Many varieties supported when:
-							<ul>
-								<li>Long-running transactions supported</li>
-								<li>Distributed systems</li>
-							</ul>
-						</li>
-					</ul>
-					<aside class="notes">
-						RDMBS: Read Committed; Read Uncommitted; Repeatable Reads; Serializable.
-						MongoDB Read Concern (Isolation): local (as in replication's internal db?); available; majority; linearizable; snapshot
-						MongoDB Write Concern (Acknowledgement): standalone; majority; n; custom tag set; j(ournal)
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h3>Isolation</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Mostly everything</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Isolation</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Block, files</li>
-					</ul>
-					<aside class="notes">
-						But fixed if you add your own lock mechanism, of course
-					</aside>
-				</section>
+        <section data-state="content-1">
+          <!-- Isolation -->
+          <h3>Isolation</h3>
+          <p>How much clients are isolated from other client's concurrently-occuring updates</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Isolation</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Ability to reason about / trust the datastore</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Isolation</h3>
+          <div>Cons</div>
+          <ul>
+            <li>It's a little hard to reason about</li>
+            <li>
+              Many varieties supported when:
+              <ul>
+                <li>Long-running transactions supported</li>
+                <li>Distributed systems</li>
+              </ul>
+            </li>
+          </ul>
+          <aside class="notes">
+            RDMBS: Read Committed; Read Uncommitted; Repeatable Reads; Serializable. MongoDB Read Concern (Isolation):
+            local (as in replication's internal db?); available; majority; linearizable; snapshot MongoDB Write Concern
+            (Acknowledgement): standalone; majority; n; custom tag set; j(ournal)
+          </aside>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Isolation</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Mostly everything</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Isolation</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Block, files</li>
+          </ul>
+          <aside class="notes">But fixed if you add your own lock mechanism, of course</aside>
+        </section>
 
-				<section><!-- multi-op transactions -->
-					<h3>Transactions</h3>
-					<p>Do multiple write (and read) ops as one unit.<br>
-						Rollback all if a write fails<br>
-						or client app chooses to abort</p>
-					<aside class="notes">
-						Not about single-record transactions / 'atomic writes'. Those already taken as granted.
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h3>Transactions</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Prevent updates that create data sets inconsistent with app's expecations</li>
-					</ul>
-					<aside class="notes">
-						Also, faster if it happens internally in the datastore compared to app handling it with client-server latency
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h3>Transactions</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Adds a lot of internal work to the storage engine</li>
-						<li>Notable performance drop when multi-op transactions used heavily</li>
-						<li>Depending on isolation level used a transaction might serially block other clients</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Transactions</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Nearly all databases</li>
-						<li>Some key-value stores</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Transactions</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Object stores</li>
-						<li>Some key-value stores</li>
-						<li>Block, Filesystem</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- multi-op transactions -->
+          <h3>Transactions</h3>
+          <p>
+            Do multiple write (and read) ops as one unit.<br />
+            Rollback all if a write fails<br />
+            or client app chooses to abort
+          </p>
+          <aside class="notes">
+            Not about single-record transactions / 'atomic writes'. Those already taken as granted.
+          </aside>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Transactions</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Prevent updates that create data sets inconsistent with app's expecations</li>
+          </ul>
+          <aside class="notes">
+            Also, faster if it happens internally in the datastore compared to app handling it with client-server
+            latency
+          </aside>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Transactions</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Adds a lot of internal work to the storage engine</li>
+            <li>Notable performance drop when multi-op transactions used heavily</li>
+            <li>Depending on isolation level used a transaction might serially block other clients</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Transactions</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Nearly all databases</li>
+            <li>Some key-value stores</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Transactions</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Object stores</li>
+            <li>Some key-value stores</li>
+            <li>Block, Filesystem</li>
+          </ul>
+        </section>
 
-				<section><!-- Enforced Schema -->
-					<h3>Enforced Schema</h3>
-					<p>Enforcing records/objects have expected fields</p>
-					<p>Cross-table referential constraints</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Enforced Schema</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Universal constraints guaranteed</li>
-						<li>Client apps cannot accidentally ruin it</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Enforced Schema</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Apps prevented from making changes incrementally</li>
-						<li>Slow deployment of apps when schema needs change</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Enforced Schema</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Most Databases</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Enforced Schema</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Object stores</li>
-						<li>Most key-value stores</li>
-						<li>Block, files</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Enforced Schema</h3>
-					<div>Important edge case:</div>
-					<ul>
-						<li>Referential constraints unsupported in most distributed databases</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Enforced Schema -->
+          <h3>Enforced Schema</h3>
+          <p>Enforcing records/objects have expected fields</p>
+          <p>Cross-table referential constraints</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Enforced Schema</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Universal constraints guaranteed</li>
+            <li>Client apps cannot accidentally ruin it</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Enforced Schema</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Apps prevented from making changes incrementally</li>
+            <li>Slow deployment of apps when schema needs change</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Enforced Schema</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Most Databases</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Enforced Schema</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Object stores</li>
+            <li>Most key-value stores</li>
+            <li>Block, files</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Enforced Schema</h3>
+          <div>Important edge case:</div>
+          <ul>
+            <li>Referential constraints unsupported in most distributed databases</li>
+          </ul>
+        </section>
 
-				<section><!-- Auth / RBAC-->
-					<h3>The Auths / RBAC</h3>
-					<p>Authentication and Authorization, a.k.a. Role-based Accesss Control</p>
-					<p>'Who', and what they are permitted to do</p>
-					<p>Usually table/file level. Rarely record-level.</p>
-				</section>
-				<section data-auto-animate>
-					<h3>The Auths / RBAC</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Lowers risk of malicious or accidental data destruction</li>
-						<li>Privacy guarantees improved</li>
-						<li>Identifying 'who' when troubleshooting</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>The Auths / RBAC</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Security regimes need cops</li>
-						<li>Slows development</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>The Auths / RBAC</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Mostly everything</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>The Auths / RBAC</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Legacy datastores you forget to enable it on</li>
-						<li>Embedded databases/storage engines</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Auth / RBAC-->
+          <h3>The Auths / RBAC</h3>
+          <p>Authentication and Authorization, a.k.a. Role-based Accesss Control</p>
+          <p>'Who', and what they are permitted to do</p>
+          <p>Usually table/file level. Rarely record-level.</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>The Auths / RBAC</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Lowers risk of malicious or accidental data destruction</li>
+            <li>Privacy guarantees improved</li>
+            <li>Identifying 'who' when troubleshooting</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>The Auths / RBAC</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Security regimes need cops</li>
+            <li>Slows development</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>The Auths / RBAC</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Mostly everything</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>The Auths / RBAC</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Legacy datastores you forget to enable it on</li>
+            <li>Embedded databases/storage engines</li>
+          </ul>
+        </section>
 
-				<section><!-- Agg / OLAP -->
-					<h3>Aggregation / Analytics</h3>
-					<p>Server-side aggregation etc. performed in the datastore</p>
-					<p>Each request processes a large sets of records (typically)</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Aggregation / Analytics</h3>
-					<div>Pros</div>
-					<ul>
-						<li>The client doesn't need to fetch a large dataset over the wire</li>
-						<li>The client app doesn't need aggregation etc. tranformation code of its own</li>
-						<li>Query/Aggregation engine code typically well-optimized</li>
-						<li>Efficiency of consolidated hardware capacity</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Aggregation / Analytics</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Bottleneck in datastore when many clients running aggregations etc. simultaneously</li>
-						<li>Careless clients can request too many big jobs simultaneously</li>
-						<li>The aggregation / analytical functions have a custom syntax to learn</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Aggregation / Analytics</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Basically all databses</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Aggregation / Analytics</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Classic, spartan Key-value stores</li>
-						<li>Object stores</li>
-						<li>'Lite' databases</li>
-					</ul>
-					<aside class="notes">
-						For object stores a separate service may do analytics
-					</aside>
-				</section>
+        <section data-state="content-1">
+          <!-- Agg / OLAP -->
+          <h3>Aggregation / Analytics</h3>
+          <p>Server-side aggregation etc. performed in the datastore</p>
+          <p>Each request processes a large sets of records (typically)</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Aggregation / Analytics</h3>
+          <div>Pros</div>
+          <ul>
+            <li>The client doesn't need to fetch a large dataset over the wire</li>
+            <li>The client app doesn't need aggregation etc. tranformation code of its own</li>
+            <li>Query/Aggregation engine code typically well-optimized</li>
+            <li>Efficiency of consolidated hardware capacity</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Aggregation / Analytics</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Bottleneck in datastore when many clients running aggregations etc. simultaneously</li>
+            <li>Careless clients can request too many big jobs simultaneously</li>
+            <li>The aggregation / analytical functions have a custom syntax to learn</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Aggregation / Analytics</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Basically all databses</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Aggregation / Analytics</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Classic, spartan Key-value stores</li>
+            <li>Object stores</li>
+            <li>'Lite' databases</li>
+          </ul>
+          <aside class="notes">For object stores a separate service may do analytics</aside>
+        </section>
 
-				<!-- TODO OLAP-performannt data models? -->
+        <!-- TODO OLAP-performannt data models? -->
 
-				<section><!-- Distributed Data -->
-					<h3>Distributed Data</h3>
-					<p>Data is partitioned by some key(s) and hosted on multiple servers.</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Distributed Data</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Allows dataset size to grow beyond the capacity of a single server</li>
-						<li>Parallelized processing might reduce latency</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Distributed Data</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Consistency guarantees are expensive when latency grows</li>
-						<li>Logical clock / vector clocks are hard to reason about</li>
-						<li>Extra write load when partitioned data is moved to balance across servers</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Distributed Data</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Object stores</li>
-						<li>Databases: Very few before 2010; Lots after.</li>
-						<li>Some key-value stores</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Distributed Data</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Filesystem / block</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Distributed Data -->
+          <h3>Distributed Data</h3>
+          <p>Data is partitioned by some key(s) and hosted on multiple servers.</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Distributed Data</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Allows dataset size to grow beyond the capacity of a single server</li>
+            <li>Parallelized processing might reduce latency</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Distributed Data</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Consistency guarantees are expensive when latency grows</li>
+            <li>Logical clock / vector clocks are hard to reason about</li>
+            <li>Extra write load when partitioned data is moved to balance across servers</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Distributed Data</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Object stores</li>
+            <li>Databases: Very few before 2010; Lots after.</li>
+            <li>Some key-value stores</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Distributed Data</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Filesystem / block</li>
+          </ul>
+        </section>
 
-				<section><!-- Continuous uptime -->
-					<h3>Replication & Continuous uptime</h3>
-					<p>Old days:</p>
-					<ul>
-						<li>Downtime for maintenance / crashes</li>
-					</ul>
-					<p>Replicated servers:</p>
-					<ul>
-						<li>Only one shutdown at a time for maintenance</li>
-						<li>Clients switch to other automatically; 100% uptime.</li>
-						<li>Hot failover</li>
-					</ul>				
-				</section>
-				<section data-auto-animate>
-					<h3>Replication & Continuous uptime</h3>
-					<div>Pros</div>
-					<ul>
-						<li>100% uptime</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Replication & Continuous uptime</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Client drivers must be replication-aware for seamless failover</li>
-						<li>Switchover might have a latency hiccup</li>
-						<li>Edge cases during switchover can break distributed consistency</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Replication & Continuous uptime</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Object stores</li>
-						<li>Many key-value stores</li>
-						<li>Most NoSQL and NewSQL databases; Few databases before that generation</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Replication & Continuous uptime</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Most relational DBs. Including recent versions or forks.</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Continuous uptime -->
+          <h3>Replication & Continuous uptime</h3>
+          <p>Old days:</p>
+          <ul>
+            <li>Downtime for maintenance / crashes</li>
+          </ul>
+          <p>Replicated servers:</p>
+          <ul>
+            <li>Only one shutdown at a time for maintenance</li>
+            <li>Clients switch to other automatically; 100% uptime.</li>
+            <li>Hot failover</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Replication & Continuous uptime</h3>
+          <div>Pros</div>
+          <ul>
+            <li>100% uptime</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Replication & Continuous uptime</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Client drivers must be replication-aware for seamless failover</li>
+            <li>Switchover might have a latency hiccup</li>
+            <li>Edge cases during switchover can break distributed consistency</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Replication & Continuous uptime</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Object stores</li>
+            <li>Many key-value stores</li>
+            <li>Most NoSQL and NewSQL databases; Few databases before that generation</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Replication & Continuous uptime</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Most relational DBs. Including recent versions or forks.</li>
+          </ul>
+        </section>
 
-				<section><!-- P.I.T.R. -->
-					<h3>Point-in-time Restore</h3>
-					<p>Time-travel to restore state before application bug / user error is the main reason to use backup.</p>
-					<p>Method: Restore most recent full snapshot before time; then replay op log from snapshot's time to desired point.</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Point-in-time Restore</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Lost data reduced to minimum</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Point-in-time Restore</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Have to keep backup of op log too</li>
-						<li>Practical, fail-safe procedures usually not part of support, nor documented well</li>
-						<li>Hard to create a script today that will be easy to use on some random, production-emergency day in the future</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Point-in-time Restore</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Some enterprise databases</li>
-						<li>Few non-enterprise databases</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- P.I.T.R. -->
+          <h3>Point-in-time Restore</h3>
+          <p>Time-travel to restore state before application bug / user error is the main reason to use backup.</p>
+          <p>
+            Method: Restore most recent full snapshot before time; then replay op log from snapshot's time to desired
+            point.
+          </p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Point-in-time Restore</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Lost data reduced to minimum</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Point-in-time Restore</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Have to keep backup of op log too</li>
+            <li>Practical, fail-safe procedures usually not part of support, nor documented well</li>
+            <li>
+              Hard to create a script today that will be easy to use on some random, production-emergency day in the
+              future
+            </li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Point-in-time Restore</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Some enterprise databases</li>
+            <li>Few non-enterprise databases</li>
+          </ul>
+        </section>
 
-				<section><!-- Streaming -->
-					<h3>Streaming</h3>
-					<p>Datastore has an API for following record-level updates</p>
-					<p>Eg. App P updates table(s); App Q receives stream of change deltas.</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Streaming</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Enables realtime-ish reactive processing</li>
-						<li>Batch processing support too, if stream can be restarted at specific timestamp on demand</li>
-						<li>Filtering streams in datastore before emitting is efficient</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Streaming</h3>
-					<div>Cons</div>
-					<ul>
-						<li>(none?)</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Streaming</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Some databases, key-value stores</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Streaming</h3>
-					<div>N/A:</div>
-					<ul>
-						<li>Event stores</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Streaming</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Object stores</li>
-						<li>Most databases</li>
-						<li>Block / fileystem</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Streaming -->
+          <h3>Streaming</h3>
+          <p>Datastore has an API for following record-level updates</p>
+          <p>Eg. App P updates table(s); App Q receives stream of change deltas.</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Streaming</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Enables realtime-ish reactive processing</li>
+            <li>Batch processing support too, if stream can be restarted at specific timestamp on demand</li>
+            <li>Filtering streams in datastore before emitting is efficient</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Streaming</h3>
+          <div>Cons</div>
+          <ul>
+            <li>(none?)</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Streaming</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Some databases, key-value stores</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Streaming</h3>
+          <div>N/A:</div>
+          <ul>
+            <li>Event stores</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Streaming</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Object stores</li>
+            <li>Most databases</li>
+            <li>Block / fileystem</li>
+          </ul>
+        </section>
 
-				<section><!-- Encryption at Rest -->
-					<h3>Encryption at Rest</h3>
-					<p>Underlying data files are encrypted,<br>
-						unusable without private key.</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Encryption at Rest</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Disk is given to another user, they find undeleted files? No problem</li>
-						<li>Hacker copies files? No problem.</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Encryption at Rest</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Need to use an external KMS</li>
-						<li>Backup restore has extra complication</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Encryption at Rest</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Many enterprise datastores</li>
-						<li>Few non-enterpise datastores</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Encryption at Rest -->
+          <h3>Encryption at Rest</h3>
+          <p>
+            Underlying data files are encrypted,<br />
+            unusable without private key.
+          </p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Encryption at Rest</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Disk is given to another user, they find undeleted files? No problem</li>
+            <li>Hacker copies files? No problem.</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Encryption at Rest</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Need to use an external KMS</li>
+            <li>Backup restore has extra complication</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Encryption at Rest</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Many enterprise datastores</li>
+            <li>Few non-enterpise datastores</li>
+          </ul>
+        </section>
 
-				<section><!-- Storage Tiering -->
-					<h3>Storage Tiering</h3>
-					<p>The files for 'cooler' data moved to a cheaper storage medium.</p>
-					<aside class="notes">
-						A datastore engine that can put move a file for one segment of a table to an object store is one type of storage tiering.
-						Another is a distributed database where new partition servers using slow disk are added, then data migrated to those partitions.
-					</aside>
-				</section>
-				<section data-auto-animate>
-					<h3>Storage Tiering</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Much larger data set kept for same $$$</li>
-						<li>Slower storage media have high retention guarantees</li>
-						<li>5, 7, 10+ year regulatory archiving easy.</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Storage Tiering</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Appplication can experience high latency volatility</li>
-						<li>Migrating 'cold' data to cheaper tiers takes time, network bandwidth</li>
-						<li>Writes (including deletes) to 'cold' segments much slower.</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Storage Tiering</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Cheaper-disk partition method:</li>
-						<ul>
-							<li>Distributed datastores</li>
-						</ul>
-						<li>Disk -> Object store tiering:
-							<ul>
-								<li>A small number of datastores, in most categories</li>
-							</ul>
-						</li>
-					</ul>
-					<aside></aside>
-				</section>
-				<section data-auto-animate>
-					<h3>Storage Tiering</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Most databases and key-value stores, especially pre-2020</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Storage Tiering -->
+          <h3>Storage Tiering</h3>
+          <p>The files for 'cooler' data moved to a cheaper storage medium.</p>
+          <aside class="notes">
+            A datastore engine that can put move a file for one segment of a table to an object store is one type of
+            storage tiering. Another is a distributed database where new partition servers using slow disk are added,
+            then data migrated to those partitions.
+          </aside>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Storage Tiering</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Much larger data set kept for same $$$</li>
+            <li>Slower storage media have high retention guarantees</li>
+            <li>5, 7, 10+ year regulatory archiving easy.</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Storage Tiering</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Appplication can experience high latency volatility</li>
+            <li>Migrating 'cold' data to cheaper tiers takes time, network bandwidth</li>
+            <li>Writes (including deletes) to 'cold' segments much slower.</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Storage Tiering</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>Cheaper-disk partition method:</li>
+            <ul>
+              <li>Distributed datastores</li>
+            </ul>
+            <li>
+              Disk -> Object store tiering:
+              <ul>
+                <li>A small number of datastores, in most categories</li>
+              </ul>
+            </li>
+          </ul>
+          <aside></aside>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Storage Tiering</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Most databases and key-value stores, especially pre-2020</li>
+          </ul>
+        </section>
 
-				<section><!-- Bare-metal speed (disk) -->
-					<h3>Bare-metal speed (disk)</h3>
-					<p></p>
-				</section>
-				<section data-auto-animate>
-					<h3>Bare-metal speed (disk)</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Write many GB/s</li>
-						<li>Read a TB < 5 mins</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Bare-metal speed (disk)</h3>
-					<div>Cons</div>
-					<ul>
-						<li>Small block access (eg < 1MB) undermines speed</li>
-						<li>Can't backup/replicate to other servers in realtime</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Bare-metal speed (disk)</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>Block / filesystem<br><span class="fragment">... only if disk mounted directly on same server</span></li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Bare-metal speed (disk)</h3>
-					<div>Absent / N/A in </div>
-					<ul>
-						<li>Everything else</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Bare-metal speed (disk) -->
+          <h3>Bare-metal speed (disk)</h3>
+          <p></p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Bare-metal speed (disk)</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Write many GB/s</li>
+            <li>Read a TB < 5 mins</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Bare-metal speed (disk)</h3>
+          <div>Cons</div>
+          <ul>
+            <li>Small block access (eg < 1MB) undermines speed</li>
+            <li>Can't backup/replicate to other servers in realtime</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Bare-metal speed (disk)</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>
+              Block / filesystem<br /><span class="fragment">... only if disk mounted directly on same server</span>
+            </li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Bare-metal speed (disk)</h3>
+          <div>Absent / N/A in</div>
+          <ul>
+            <li>Everything else</li>
+          </ul>
+        </section>
 
-				<section><!-- Bare-metal speed (RAM) -->
-					<h3>Bare-metal speed (RAM)</h3>
-					<p>No persistence, but if mirrored to other servers then server crash risk mitigated.</p>
-				</section>
-				<section data-auto-animate>
-					<h3>Bare-metal speed (RAM)</h3>
-					<div>Pros</div>
-					<ul>
-						<li>Worst latency hiccups should be &lt; 1 ms</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Bare-metal speed (RAM)</h3>
-					<div>Cons</div>
-					<ul>
-						<li>No persistence</li>
-						<li>Other server IO channels are the real bottleneck</li>
-						<li>RAM's high speed is N/A when network bottleneck is in the way</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h3>Bare-metal speed (RAM)</h3>
-					<div>Present in ...</div>
-					<ul>
-						<li>In-memory databases and 'memory grids'</li>
-						<li>Any normal database with 'skip disk writing' option</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Bare-metal speed (RAM) -->
+          <h3>Bare-metal speed (RAM)</h3>
+          <p>No persistence, but if mirrored to other servers then server crash risk mitigated.</p>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Bare-metal speed (RAM)</h3>
+          <div>Pros</div>
+          <ul>
+            <li>Worst latency hiccups should be &lt; 1 ms</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Bare-metal speed (RAM)</h3>
+          <div>Cons</div>
+          <ul>
+            <li>No persistence</li>
+            <li>Other server IO channels are the real bottleneck</li>
+            <li>RAM's high speed is N/A when network bottleneck is in the way</li>
+          </ul>
+        </section>
+        <section data-state="content-1" data-auto-animate>
+          <h3>Bare-metal speed (RAM)</h3>
+          <div>Present in ...</div>
+          <ul>
+            <li>In-memory databases and 'memory grids'</li>
+            <li>Any normal database with 'skip disk writing' option</li>
+          </ul>
+        </section>
 
-				<!--section><! -- TEMPLATE -- >
+        <!--section><! -- TEMPLATE -- >
 					<h3>XXXXXXXXXXXXXX</h3>
 					<p></p>
 				</section>
-				<section data-auto-animate>
+				<section data-state="content-1" data-auto-animate>
 					<h3>XXXXXXXXXXXXXX</h3>
 					<div>Pros</div>
 					<ul>
 						<li>ppppppp</li>
 					</ul>
 				</section>
-				<section data-auto-animate>
+				<section data-state="content-1" data-auto-animate>
 					<h3>XXXXXXXXXXXXXX</h3>
 					<div>Cons</div>
 					<ul>
 						<li>cccccccc</li>
 					</ul>
 				</section>
-				<section data-auto-animate>
+				<section data-state="content-1" data-auto-animate>
 					<h3>XXXXXXXXXXXXXX</h3>
 					<div>Present in ...</div>
 					<ul>
@@ -824,86 +873,116 @@
 					</ul>
 				</section-->
 
-				<section><!-- Conclusion -->
-					<h2>Conclusion</h2>
-				</section>
+        <section data-state="content-1">
+          <!-- Conclusion -->
+          <h2>Conclusion</h2>
+        </section>
 
-				<section><!-- Variety -->
-					<h3>Wide variety</h3>
-					<ul>
-						<li class="fragment">Application fit
-							<ul>
-								<li>API</li>
-								<li>Data model</li>
-								<li>Performance</li>
-							</ul>
-						</li>
-						<li class="fragment">Operations
-							<ul>
-								<li>Self-managed or SaaS</li>
-								<li>Cost per GB</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Variety -->
+          <h3>Wide variety</h3>
+          <ul>
+            <li class="fragment">
+              Application fit
+              <ul>
+                <li>API</li>
+                <li>Data model</li>
+                <li>Performance</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Operations
+              <ul>
+                <li>Self-managed or SaaS</li>
+                <li>Cost per GB</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
 
-				<section><!-- Reduce reqs and profit -->
-					<h3>Reduce your requirements</h3>
-					<p>Find more options on the shelf</p>
-				</section>
-				<section>
-					<ul>
-						<li>Don't need disk persistence?<br>
-							<span class="fragment">Enjoy in-memory speed</span></li>
-						<li class="fragment">Dataset fits into one server?<br>
-							<span class="fragment">Distributed datastore not required</span></li>
-						<li class="fragment">Application-level data partitioning?<br>
-							<Distributed class="fragment">Distributed datastore not required</span></li>
-					</ul>
-				</section>
-				<section>
-					<ul>
-						<li>Don't need low response latency?<br>
-							<span class="fragment">Remote cloud OK</span><br>
-							<span class="fragment">HTTP API OK</span></li>
-						<li class="fragment">Can re-initialize all data from external source?<br>
-							<span class="fragment">Datastores lacking backup method OK</span></li>
-						<li class="fragment">Don't need to share the data beyond one app server?<br>
-							<span class="fragment">Embedded storage engine or database becomes an option (+ authentication unnecessary if so)</span></li>
-					</ul>
-				</section>
-				<section>
-					<ul>
-						<li>In a secure network?<br>
-							<span class="fragment">No TLS connection support OK</span></li>
-						<li class="fragment">Only need primary key, no secondary, compound, etc. indexes?<br>
-							<span class="fragment">Key-value db</span><span></span></li>
-						<li class="fragment">etc.</li>
-						<li class="fragment">etc.</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <!-- Reduce reqs and profit -->
+          <h3>Reduce your requirements</h3>
+          <p>Find more options on the shelf</p>
+        </section>
+        <section data-state="content-1">
+          <ul>
+            <li>
+              Don't need disk persistence?<br />
+              <span class="fragment">Enjoy in-memory speed</span>
+            </li>
+            <li class="fragment">
+              Dataset fits into one server?<br />
+              <span class="fragment">Distributed datastore not required</span>
+            </li>
+            <li class="fragment">
+              Application-level data partitioning?<br />
+              <span class="fragment">Distributed datastore not required</span>
+            </li>
+          </ul>
+        </section>
+        <section data-state="content-1">
+          <ul>
+            <li>
+              Don't need low response latency?<br />
+              <span class="fragment">Remote cloud OK</span><br />
+              <span class="fragment">HTTP API OK</span>
+            </li>
+            <li class="fragment">
+              Can re-initialize all data from external source?<br />
+              <span class="fragment">Datastores lacking backup method OK</span>
+            </li>
+            <li class="fragment">
+              Don't need to share the data beyond one app server?<br />
+              <span class="fragment"
+                >Embedded storage engine or database becomes an option (+ authentication unnecessary if so)</span
+              >
+            </li>
+          </ul>
+        </section>
+        <section data-state="content-1">
+          <ul>
+            <li>
+              In a secure network?<br />
+              <span class="fragment">No TLS connection support OK</span>
+            </li>
+            <li class="fragment">
+              Only need primary key, no secondary, compound, etc. indexes?<br />
+              <span class="fragment">Key-value db</span><span></span>
+            </li>
+            <li class="fragment">etc.</li>
+            <li class="fragment">etc.</li>
+          </ul>
+        </section>
 
-				<section><!-- Typical business reqs -->
-					<h3>Strongly-limiting business requirements</h3>
-					<aside class="notes">
-						High correlation with: Corporate customer checck-lists
-					</aside>
-				</section>
+        <section data-state="content-1">
+          <!-- Typical business reqs -->
+          <h3>Strongly-limiting business requirements</h3>
+          <aside class="notes">High correlation with: Corporate customer checck-lists</aside>
+        </section>
 
-				<section>
-					<ul>
-						<li>Need data-at-rest encryption?<br>
-							<span class="fragment">Very few datastores</span></li>
-						<li class="fragment">Federated Authentication?<br>
-							<span class="fragment">Most enterprise datastores; Few non-enterprise datastores</span></li>
-						<li class="fragment">Rapid restore of TB-sized backups?<br>
-							<span class="fragment">Filesystem snapshot methods are probably required</span></li>
-						<li class="fragment">Point-in-time restore?<br>
-							<span class="fragment">Not many datastores have documented, supported method</span></li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <ul>
+            <li>
+              Need data-at-rest encryption?<br />
+              <span class="fragment">Very few datastores</span>
+            </li>
+            <li class="fragment">
+              Federated Authentication?<br />
+              <span class="fragment">Most enterprise datastores; Few non-enterprise datastores</span>
+            </li>
+            <li class="fragment">
+              Rapid restore of TB-sized backups?<br />
+              <span class="fragment">Filesystem snapshot methods are probably required</span>
+            </li>
+            <li class="fragment">
+              Point-in-time restore?<br />
+              <span class="fragment">Not many datastores have documented, supported method</span>
+            </li>
+          </ul>
+        </section>
 
-				<!-- section>
+        <!-- section>
 					<h3>Responsibilities</h3>
 					<p>Developers provide new features<br><span class="fragment">New features = profit</span></p>
 					<p>DBAs guarantee uptime, performance<br><span class="fragment">New risks = all blame on them</span></p>
@@ -914,58 +993,61 @@
 					</aside>
 				</section -->
 
-				<section>
-					<p><b>Business Continuity</b></p>
-					<ul>
-						<li class="fragment fade-in-then-semi-out">Maintenance without downtime <span  class="fragment">(now common)</span></li>
-						<li class="fragment fade-in-then-semi-out">Multi-datacenter failover <span  class="fragment">(now common)</span></li>
-						<li class="fragment">Automated backup restore</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <p><b>Business Continuity</b></p>
+          <ul>
+            <li class="fragment fade-in-then-semi-out">
+              Maintenance without downtime <span class="fragment">(now common)</span>
+            </li>
+            <li class="fragment fade-in-then-semi-out">
+              Multi-datacenter failover <span class="fragment">(now common)</span>
+            </li>
+            <li class="fragment">Automated backup restore</li>
+          </ul>
+        </section>
 
-				<section>
-					<p><b>Security Compliance, Data Governance</b></p>
-					<ul>
-						<li class="fragment">Security</li>
-						<ul>
-							<li class="fragment">KMS (Key management server) integration</li>
-							<li class="fragment fade-in-then-semi-out">Network encryption <span  class="fragment">(common)</span></li>
-							<li class="fragment">Storage encryption (minority req.)</li>
-						</ul>
-						<li class="fragment">Audit Log</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <p><b>Security Compliance, Data Governance</b></p>
+          <ul>
+            <li class="fragment">Security</li>
+            <ul>
+              <li class="fragment">KMS (Key management server) integration</li>
+              <li class="fragment fade-in-then-semi-out">Network encryption <span class="fragment">(common)</span></li>
+              <li class="fragment">Storage encryption (minority req.)</li>
+            </ul>
+            <li class="fragment">Audit Log</li>
+          </ul>
+        </section>
 
-				<section>
-					<p>Small % of datastores satisfy all those</p>
-					<ul>
-						<li>Up side: Search time saved</li>
-						<li>Down side: Probably ruled-out
-							<ul>
-								<li>Best-fit API and data model</li>
-								<li>Best performance, cost</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
+        <section data-state="content-1">
+          <p>Small % of datastores satisfy all those</p>
+          <ul>
+            <li>Up side: Search time saved</li>
+            <li>
+              Down side: Probably ruled-out
+              <ul>
+                <li>Best-fit API and data model</li>
+                <li>Best performance, cost</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
 
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
 
-			</div>
-		</div>
-
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
