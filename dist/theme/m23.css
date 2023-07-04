@@ -127,6 +127,20 @@ html body.content-1 {
   background-size: contain;
   background-repeat: no-repeat;
 }
+html body.content-2 {
+  background-image: url("../../css/marionete_2020_templates_backgrounds/content_2.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+html body.content-3 {
+  background-image: url("../../css/marionete_2020_templates_backgrounds/content_3.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
 html body.title-1 {
   background-image: url("../../css/marionete_2020_templates_backgrounds/title_1.jpg");
   background-position: center;
@@ -145,6 +159,27 @@ html body.title-1 div.slides section.slide {
   color: white;
   right: 30%;
 }
+html body.main-divider-1 {
+  background-image: url("../../css/marionete_2020_templates_backgrounds/main_divider_1.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #323134;
+}
+html body.main-divider-2 {
+  background-image: url("../../css/marionete_2020_templates_backgrounds/main_divider_2.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f1f1f1;
+}
+html body.end-1 {
+  background-image: url("../../css/marionete_2020_templates_backgrounds/end_1.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f1f1f1;
+}
 
 .title-2 h1,
 .title-2 h2,
@@ -153,7 +188,7 @@ html body.title-1 div.slides section.slide {
 .title-2 h5,
 .title-2 h6  {
   text-align: left;
-  margin-left: -40px;
+  /*margin-left: -5%;*/
 }
 
 .title-2 .reveal h1 {
@@ -163,6 +198,11 @@ html body.title-1 div.slides section.slide {
 .title-2 .reveal h3 {
   /*font-size: var(--r-heading1-size);*/
   font-size: 1em;
+}
+
+.footnote {
+  color: #a7a9ac;
+  font-size: 70%;
 }
 
 /*********************************************
