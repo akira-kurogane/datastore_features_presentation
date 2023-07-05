@@ -72,7 +72,7 @@
             Just one paper following many others, but a turning point in popularity for that sort of reading amongst
             opensource devs.
           </p>
-          <p class="fragment">Proprietary enterprise DBMSes lose their special aura overnight.</p>
+          <p class="fragment">Proprietary enterprise DBMS lose their special aura overnight.</p>
         </section>
 
         <section data-state="content-1">
@@ -803,13 +803,6 @@
         </section>
         <section data-state="content-1" data-auto-animate>
           <h3>Change Stream</h3>
-          <h4>N/A:</h4>
-          <ul>
-            <li>Event stores</li>
-          </ul>
-        </section>
-        <section data-state="content-1" data-auto-animate>
-          <h3>Change Stream</h3>
           <h4>Absent / N/A in ...</h4>
           <ul>
             <li>Object stores</li>
@@ -1047,6 +1040,10 @@
         </section>
 
         <section data-state="content-1">
+          <div>Q&A 🕑</div>
+        </section>
+
+        <section data-state="content-1">
           <ul style="font-size: 60%; display: inline-block; margin-right: 24px">
             <li>Durability</li>
             <li>Consistency (classic)</li>
@@ -1067,10 +1064,6 @@
             <li>Storage Tiering</li>
             <li>Bare-metal speed</li>
           </ul>
-        </section>
-
-        <section data-state="content-1">
-          <div>Q&A 🕑</div>
         </section>
 
         <!--section><! -- TEMPLATE -- >
@@ -1106,6 +1099,29 @@
 					</ul>
 				</section-->
 
+				<!-- Let's build a DBMS -->
+        <section data-state="main-divider-1">
+					<h1>Exercise</h1>
+          <h2>Let's build a DBMS</h2>
+        </section>
+        <section data-state="content-1">
+          <p>Start with a storage engine and query engine</p>
+					<svg version="1.1" width="300" height="175" xmlns="http://www.w3.org/2000/svg">
+						<rect x="170" y="30" width="120" height="140" stroke="#101010" stroke-width="3" fill="transparent"/>
+						<text x="230" y="45" font-size="12" text-anchor="middle" fill="purple">Storage Engine</text>
+						<rect x="20" y="40" width="80" height="100" stroke="#101010" stroke-width="3" fill="transparent"/>
+						<text x="60" y="55" font-size="12" text-anchor="middle" fill="purple">Query Engine</text>
+
+					</svg>
+					<p>🖍<br/>Add every feature.</p>
+					<p>Make every type of database,<br/>object store and key-value store</p>
+					<aside class="notes">
+						<p>"Let's Build a Simple Database" https://cstack.github.io/db_tutorial/</p>
+						<p>https://build-your-own.org/database/</p>
+						<p>https://build-your-own.org/redis/</p>
+					</aside>
+        </section>
+
         <!-- Conclusion -->
         <section data-state="main-divider-1">
           <h2>Conclusion</h2>
@@ -1113,28 +1129,49 @@
 
         <!-- Variety -->
         <section data-state="content-1">
-          <h3>Wide variety</h3>
-
-          <h4>Application fit</h4>
-          <ul class="fragment">
-            <li>API</li>
-            <li>Data model</li>
-            <li>Performance</li>
+          <h3>Wide variety of features</h3>
+          <p>Thousands of <span style="font-style: italic">marketing</span>-made feature names</p>
+					<p>Reality: ~20 general, orthogonal features<br/>for understanding capability</p>
+        </section>
+        <section data-state="content-1">
+          <h3>Business requirements</h3>
+          <ul>
+						<li>Data volume</li>
+						<li>Latency SLA</li>
+            <li>Uptime</li>
+						<li>Disaster Recovery</li>
+            <li>Privacy regulations</li>
+						<li>Retention / Archiving</li>
           </ul>
         </section>
         <section data-state="content-1">
-          <h3>Wide variety</h3>
-          <h4>Operations</h4>
-          <ul class="fragment">
+          <h3>Ops & Security requirements</h2>
+          <ul>
             <li>Self-managed vs. SaaS</li>
-            <li>Cost per GB</li>
+						<li>External Auth integration</li>
+						<li>Auditing</li>
+						<li>Encryption</li>
+						<li>Performance, Cost</li>
+          </ul>
+        </section>
+        <section data-state="content-1">
+          <h3>Application fit</h3>
+          <ul>
+            <li><span style="opacity: 0.5;">Data model</span> <span class="footnote">(another lesson)</span></li>
+            <li><span style="opacity: 0.5;">Driver / Client API</span> <span class="footnote">(another lesson)</span></li>
+						<li>Inbuilt Aggregation / Analytics</li>
+						<li>Change Stream</li>
           </ul>
         </section>
 
         <!-- Reduce reqs and profit -->
-        <section data-state="main-divider-2">
+        <section data-state="main-divider-2" data-auto-animate>
           <h3>Reduce your requirements</h3>
           <p>Find more options on the shelf</p>
+        </section>
+        <section data-state="main-divider-2" data-auto-animate>
+          <h3>Reduce your requirements</h3>
+          <p style="font-weight: 900;">Find more options on the shelf</p>
         </section>
         <section data-state="content-1">
           <ul>
@@ -1264,6 +1301,10 @@
             </li>
           </ul>
         </section>
+
+        <section data-state="content-1">
+					<h6>That's all folks!</h6>
+				</section>
         <section data-state="end-1"></section>
       </div>
     </div>
